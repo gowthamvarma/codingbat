@@ -1,7 +1,5 @@
 package problems;
 
-import java.util.List;
-
 public class AP1 {
 	// url :: https://codingbat.com/java/AP-1
 
@@ -73,7 +71,7 @@ public class AP1 {
 	 * where all the strings of the given length are omitted. See wordsWithout()
 	 * below which is more difficult because it uses arrays.
 	 */
-	public List wordsWithoutList(String[] words, int len) {
+	public String[] wordsWithoutList(String[] words, int len) {
 		return null;
 	}
 
