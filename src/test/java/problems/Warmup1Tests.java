@@ -9,7 +9,7 @@ public class Warmup1Tests {
 
 	Warmup1 warmup1 = new Warmup1();
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void sleepIn() {
 		assertEquals(true, warmup1.sleepIn(false, false));
@@ -18,7 +18,7 @@ public class Warmup1Tests {
 		assertEquals(true, warmup1.sleepIn(true, true));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void monkeyTrouble() {
 		assertEquals(true, warmup1.monkeyTrouble(true, true));
@@ -27,7 +27,7 @@ public class Warmup1Tests {
 		assertEquals(false, warmup1.monkeyTrouble(false, true));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void sumDouble() {
 		assertEquals(3, warmup1.sumDouble(1, 2));
@@ -40,7 +40,7 @@ public class Warmup1Tests {
 		assertEquals(7, warmup1.sumDouble(3, 4));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void diff21() {
 		assertEquals(2, warmup1.diff21(19));
@@ -57,7 +57,7 @@ public class Warmup1Tests {
 		assertEquals(58, warmup1.diff21(50));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void parrotTrouble() {
 		assertEquals(true, warmup1.parrotTrouble(true, 6));
@@ -72,7 +72,7 @@ public class Warmup1Tests {
 		assertEquals(false, warmup1.parrotTrouble(false, 12));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void makes10() {
 		assertEquals(true, warmup1.makes10(9, 10));
@@ -86,7 +86,7 @@ public class Warmup1Tests {
 		assertEquals(true, warmup1.makes10(12, -2));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void nearHundred() {
 		assertEquals(true, warmup1.nearHundred(93));
@@ -110,7 +110,7 @@ public class Warmup1Tests {
 		assertEquals(false, warmup1.nearHundred(290));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void posNeg() {
 		assertEquals(true, warmup1.posNeg(1, -1, false));
@@ -134,7 +134,7 @@ public class Warmup1Tests {
 		assertEquals(true, warmup1.posNeg(-5, -5, true));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void notvoid() {
 		assertEquals("not candy", warmup1.notString("candy"));
@@ -146,7 +146,7 @@ public class Warmup1Tests {
 		assertEquals("not no", warmup1.notString("no"));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void missingChar() {
 		assertEquals("ktten", warmup1.missingChar("kitten", 1));
@@ -161,7 +161,7 @@ public class Warmup1Tests {
 		assertEquals("chocolat", warmup1.missingChar("chocolate", 8));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void frontBack() {
 		assertEquals("eodc", warmup1.frontBack("code"));
@@ -174,7 +174,7 @@ public class Warmup1Tests {
 		assertEquals("oellh", warmup1.frontBack("hello"));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void front3() {
 		assertEquals("JavJavJav", warmup1.front3("Java"));
@@ -186,7 +186,7 @@ public class Warmup1Tests {
 		assertEquals("", warmup1.front3(""));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void backAround() {
 		assertEquals("tcatt", warmup1.backAround("cat"));
@@ -197,7 +197,7 @@ public class Warmup1Tests {
 		assertEquals("obooo", warmup1.backAround("boo"));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void or35() {
 		assertEquals(true, warmup1.or35(3));
@@ -224,7 +224,7 @@ public class Warmup1Tests {
 		assertEquals(true, warmup1.or35(123));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void front22() {
 		assertEquals("kikittenki", warmup1.front22("kitten"));
@@ -236,7 +236,7 @@ public class Warmup1Tests {
 		assertEquals("LoLogicLo", warmup1.front22("Logic"));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void startHi() {
 		assertEquals(true, warmup1.startHi("hi there"));
@@ -249,7 +249,7 @@ public class Warmup1Tests {
 		assertEquals(true, warmup1.startHi("hi ho"));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void icyHot() {
 		assertEquals(true, warmup1.icyHot(120, -1));
@@ -260,7 +260,7 @@ public class Warmup1Tests {
 		assertEquals(false, warmup1.icyHot(120, 120));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void in1020() {
 		assertEquals(true, warmup1.in1020(12, 99));
@@ -272,7 +272,7 @@ public class Warmup1Tests {
 		assertEquals(false, warmup1.in1020(9, 9));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void hasTeen() {
 		assertEquals(true, warmup1.hasTeen(13, 20, 10));
@@ -288,7 +288,7 @@ public class Warmup1Tests {
 		assertEquals(false, warmup1.hasTeen(11, 22, 22));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void loneTeen() {
 		assertEquals(true, warmup1.loneTeen(13, 99));
@@ -306,7 +306,7 @@ public class Warmup1Tests {
 		assertEquals(false, warmup1.loneTeen(99, 99));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void delDel() {
 		assertEquals("abc", warmup1.delDel("adelbc"));
@@ -322,7 +322,7 @@ public class Warmup1Tests {
 		assertEquals("aadelbb", warmup1.delDel("aadelbb"));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void mixStart() {
 		assertEquals(true, warmup1.mixStart("mix snacks"));
@@ -334,7 +334,7 @@ public class Warmup1Tests {
 		assertEquals(false, warmup1.mixStart(""));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void startOz() {
 		assertEquals("oz", warmup1.startOz("ozymandias"));
@@ -351,7 +351,7 @@ public class Warmup1Tests {
 		assertEquals("oz", warmup1.startOz("oznic"));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void voidMax() {
 		assertEquals(3, warmup1.intMax(1, 2, 3));
@@ -367,7 +367,7 @@ public class Warmup1Tests {
 		assertEquals(6, warmup1.intMax(5, 2, 6));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void close10() {
 		assertEquals(8, warmup1.close10(8, 13));
@@ -383,7 +383,7 @@ public class Warmup1Tests {
 		assertEquals(0, warmup1.close10(10, 10));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void in3050() {
 		assertEquals(true, warmup1.in3050(30, 31));
@@ -400,7 +400,7 @@ public class Warmup1Tests {
 		assertEquals(false, warmup1.in3050(35, 45));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void max1020() {
 		assertEquals(19, warmup1.max1020(11, 19));
@@ -416,7 +416,7 @@ public class Warmup1Tests {
 		assertEquals(17, warmup1.max1020(17, 16));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void stringE() {
 		assertEquals(true, warmup1.stringE("Hello"));
@@ -427,7 +427,7 @@ public class Warmup1Tests {
 		assertEquals(false, warmup1.stringE(""));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void lastDigit() {
 		assertEquals(true, warmup1.lastDigit(7, 17));
@@ -439,7 +439,7 @@ public class Warmup1Tests {
 		assertEquals(false, warmup1.lastDigit(11, 0));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void endUp() {
 		assertEquals("HeLLO", warmup1.endUp("Hello"));
@@ -451,7 +451,7 @@ public class Warmup1Tests {
 		assertEquals("", warmup1.endUp(""));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void everyNth() {
 		assertEquals("Mrce", warmup1.everyNth("Miracle", 2));

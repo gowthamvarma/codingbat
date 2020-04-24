@@ -10,7 +10,7 @@ public class Warmup1 {
 	 * weekday or we're on vacation. Return true if we sleep in.
 	 */
 	public boolean sleepIn(boolean weekday, boolean vacation) {
-		return false;
+		return !weekday || vacation;
 	}
 
 	// url :: https://codingbat.com/prob/p181646
@@ -20,7 +20,7 @@ public class Warmup1 {
 	 * smiling or if neither of them is smiling. Return true if we are in trouble.
 	 */
 	public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
-		return false;
+		return aSmile == bSmile;
 	}
 
 	// url :: https://codingbat.com/prob/p154485
@@ -29,7 +29,10 @@ public class Warmup1 {
 	 * are the same, then return double their sum.
 	 */
 	public int sumDouble(int a, int b) {
-		return 0;
+		if(a == b) {
+			return 4*a;
+		}
+		return a + b;
 	}
 
 	// url :: https://codingbat.com/prob/p116624
@@ -38,7 +41,10 @@ public class Warmup1 {
 	 * except return double the absolute difference if n is over 21.
 	 */
 	public int diff21(int n) {
-		return 0;
+		if(n < 21) {
+			return 21 - n;
+		}
+		return 2 * (n -21);
 	}
 
 	// url :: https://codingbat.com/prob/p140449
@@ -49,7 +55,7 @@ public class Warmup1 {
 	 * trouble.
 	 */
 	public boolean parrotTrouble(boolean talking, int hour) {
-		return false;
+		return talking && (hour < 7 || hour > 20);
 	}
 
 	// url :: https://codingbat.com/prob/p182873
@@ -58,7 +64,7 @@ public class Warmup1 {
 	 * their sum is 10.
 	 */
 	public boolean makes10(int a, int b) {
-		return false;
+		return a == 10 || b == 10 || a + b == 10;
 	}
 
 	// url :: https://codingbat.com/prob/p184004
@@ -67,7 +73,7 @@ public class Warmup1 {
 	 * Note: Math.abs(num) computes the absolute value of a number.
 	 */
 	public boolean nearHundred(int n) {
-		return false;
+		return Math.abs(100 - n) <= 10 || Math.abs(200 - n) <= 10;
 	}
 
 	// url :: https://codingbat.com/prob/p159227
@@ -77,7 +83,10 @@ public class Warmup1 {
 	 * if both are negative.
 	 */
 	public boolean posNeg(int a, int b, boolean negative) {
-		return false;
+		if(negative) {
+			return a < 0 && b < 0;
+		}
+		return a * b < 0;
 	}
 
 	// url :: https://codingbat.com/prob/p191914
@@ -87,7 +96,10 @@ public class Warmup1 {
 	 * string unchanged. Note: use .equals() to compare 2 strings.
 	 */
 	public String notString(String str) {
-		return null;
+		if(str.startsWith("not")) {
+			return str;
+		}
+		return "not " + str;
 	}
 
 	// url :: https://codingbat.com/prob/p190570
@@ -136,7 +148,7 @@ public class Warmup1 {
 	 * or a multiple of 5. Use the % "mod" operator -- see Introduction to Mod
 	 */
 	public boolean or35(int n) {
-		return false;
+		return n % 3 == 0 || n % 5 ==  0;
 	}
 
 	// url :: https://codingbat.com/prob/p183592
@@ -165,7 +177,7 @@ public class Warmup1 {
 	 * the other is greater than 100.
 	 */
 	public boolean icyHot(int temp1, int temp2) {
-		return false;
+		return (temp1 < 0 && temp2 > 100) || (temp2 < 0 && temp1 > 100);
 	}
 
 	// url :: https://codingbat.com/prob/p144535
@@ -174,7 +186,7 @@ public class Warmup1 {
 	 * range 10..20 inclusive.
 	 */
 	public boolean in1020(int a, int b) {
-		return false;
+		return (a >= 10 && a <= 20) || (b >= 10 && b <= 20);
 	}
 
 	// url :: https://codingbat.com/prob/p178986
@@ -183,7 +195,7 @@ public class Warmup1 {
 	 * inclusive. Given 3 int values, return true if 1 or more of them are teen.
 	 */
 	public boolean hasTeen(int a, int b, int c) {
-		return false;
+		return (a >= 13 && a <= 19) || (b >= 13 && b <= 19) || (c >= 13 && c <= 19);
 	}
 
 	// url :: https://codingbat.com/prob/p165701
@@ -193,7 +205,10 @@ public class Warmup1 {
 	 * not both.
 	 */
 	public boolean loneTeen(int a, int b) {
-		return false;
+		if((a >= 13 && a <= 19) && (b >= 13 && b <= 19)) {
+			return false;
+		}
+		return (a >= 13 && a <= 19) || (b >= 13 && b <= 19);
 	}
 
 	// url :: https://codingbat.com/prob/p100905
