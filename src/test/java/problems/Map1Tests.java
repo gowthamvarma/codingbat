@@ -14,7 +14,7 @@ public class Map1Tests {
 	Map<String, String> input = null;
 	Map<String, String> expectedOutput = null;
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void mapBully() {
 
@@ -65,7 +65,7 @@ public class Map1Tests {
 		assertEquals(expectedOutput, map1.mapBully(input));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void mapShare() {
 
@@ -120,7 +120,7 @@ public class Map1Tests {
 		assertEquals(expectedOutput, map1.mapShare(input));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void mapAB() {
 
@@ -174,7 +174,7 @@ public class Map1Tests {
 		assertEquals(expectedOutput, map1.mapAB(input));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void topping1() {
 
@@ -216,7 +216,7 @@ public class Map1Tests {
 		assertEquals(expectedOutput, map1.topping1(input));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void topping2() {
 
@@ -264,7 +264,7 @@ public class Map1Tests {
 		assertEquals(expectedOutput, map1.topping2(input));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void topping3() {
 
@@ -318,7 +318,7 @@ public class Map1Tests {
 		assertEquals(expectedOutput, map1.topping3(input));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void mapAB2() {
 
@@ -383,7 +383,7 @@ public class Map1Tests {
 		assertEquals(expectedOutput, map1.mapAB2(input));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void mapAB3() {
 
@@ -467,7 +467,7 @@ public class Map1Tests {
 		assertEquals(expectedOutput, map1.mapAB3(input));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void mapAB4() {
 

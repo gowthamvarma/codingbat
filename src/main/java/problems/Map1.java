@@ -13,7 +13,12 @@ public class Map1 {
 	 * the empty string.
 	 */
 	public Map<String, String> mapBully(Map<String, String> map) {
-		return null;
+		String value_a = map.get("a");
+		if(value_a != null && value_a.length() > 0) {
+			map.put("b",value_a);
+			map.put("a","");
+		}
+		return map;
 	}
 
 	// url :: https://codingbat.com/prob/p148813
@@ -23,7 +28,12 @@ public class Map1 {
 	 * "c", leaving the rest of the map unchanged.
 	 */
 	public Map<String, String> mapShare(Map<String, String> map) {
-		return null;
+		String value_a = map.get("a");
+		if(value_a != null && value_a.length() > 0) {
+			map.put("b",value_a);
+		}
+		map.remove("c");
+		return map;
 	}
 
 	// url :: https://codingbat.com/prob/p107259
@@ -34,7 +44,14 @@ public class Map1 {
 	 * "ab".
 	 */
 	public Map<String, String> mapAB(Map<String, String> map) {
-		return null;
+		String value_a = map.get("a");
+		String value_b = map.get("b");
+		if(value_a != null && value_a.length() > 0) {
+			if(value_b != null && value_b.length() > 0) {
+				map.put("ab",value_a + value_b);
+			}
+		}
+		return map;
 	}
 
 	// url :: https://codingbat.com/prob/p182712
@@ -44,7 +61,12 @@ public class Map1 {
 	 * "cherry". In all cases, set the key "bread" to have the value "butter".
 	 */
 	public Map<String, String> topping1(Map<String, String> map) {
-		return null;
+		String value_ice_cream = map.get("ice cream");
+		if(value_ice_cream != null && value_ice_cream.length() > 0) {
+			map.put("ice cream","cherry");
+		}
+		map.put("bread","butter");
+		return map;
 	}
 
 	// url :: https://codingbat.com/prob/p196458
@@ -55,7 +77,17 @@ public class Map1 {
 	 * that value to "nuts".
 	 */
 	public Map<String, String> topping2(Map<String, String> map) {
-		return null;
+		
+		String value_ice_cream = map.get("ice cream");
+		if(value_ice_cream != null && value_ice_cream.length() > 0) {
+			map.put("yogurt",value_ice_cream);
+		}
+		
+		String value_spinach = map.get("spinach");
+		if(value_spinach != null && value_spinach.length() > 0) {
+			map.put("spinach","nuts");
+		}
+		return map;
 	}
 
 	// url :: https://codingbat.com/prob/p128461
@@ -66,7 +98,17 @@ public class Map1 {
 	 * for the key "spinach".
 	 */
 	public Map<String, String> topping3(Map<String, String> map) {
-		return null;
+		
+		String value_potato = map.get("potato");
+		if(value_potato != null && value_potato.length() > 0) {
+			map.put("fries",value_potato);
+		}
+		
+		String value_salad = map.get("salad");
+		if(value_salad != null && value_salad.length() > 0) {
+			map.put("spinach",value_salad);
+		}
+		return map;
 	}
 
 	// url :: https://codingbat.com/prob/p115011
@@ -75,7 +117,17 @@ public class Map1 {
 	 * "b" are both in the map and have equal values, remove them both.
 	 */
 	public Map<String, String> mapAB2(Map<String, String> map) {
-		return null;
+		String value_a = map.get("a");
+		String value_b = map.get("b");
+		if(value_a != null) {
+			if(value_b != null) {
+				if(value_a.equals(value_b)) {
+					map.remove("a");
+					map.remove("b");
+				}
+			}
+		}
+		return map;
 	}
 
 	// url :: https://codingbat.com/prob/p115012
@@ -85,7 +137,15 @@ public class Map1 {
 	 * have that same value in the map.
 	 */
 	public Map<String, String> mapAB3(Map<String, String> map) {
-		return null;
+		String value_a = map.get("a");
+		String value_b = map.get("b");
+		if(value_a != null && value_b == null) {
+			map.put("b",value_a);
+		}
+		if(value_a == null && value_b != null) {
+			map.put("a",value_b);
+		}
+		return map;
 	}
 
 	// url :: https://codingbat.com/prob/p136950
@@ -96,7 +156,21 @@ public class Map1 {
 	 * empty string in the map.
 	 */
 	public Map<String, String> mapAB4(Map<String, String> map) {
-		return null;
+		String value_a = map.get("a");
+		String value_b = map.get("b");
+		if(value_a != null) {
+			if(value_b != null) {
+				if(value_a.length() == value_b.length()) {
+					map.put("a","");
+					map.put("b","");
+				} else {
+					String value = value_a.length() > value_b.length() ? value_a : value_b;
+					map.put("c",value);
+				}
+			}
+		}
+		return map;
 	}
 
 }
+
