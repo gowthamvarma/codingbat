@@ -9,7 +9,11 @@ public class Warmup2 {
 	 * that is n copies of the original string.
 	 */
 	public String stringTimes(String str, int n) {
-		return null;
+		String result = "";
+		for (int i = 0; i < n; i++) {
+			result += str;
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p101475
@@ -19,7 +23,13 @@ public class Warmup2 {
 	 * is less than length 3. Return n copies of the front;
 	 */
 	public String frontTimes(String str, int n) {
-		return null;
+		String result = "";
+		int end = str.length() < 3 ? str.length() : 3;
+		String subStr =  str.substring(0,end);
+		for (int i = 0; i < n; i++) {
+			result += subStr;
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p194667
@@ -28,7 +38,16 @@ public class Warmup2 {
 	 * overlapping is allowed, so "xxx" contains 2 "xx".
 	 */
 	public int countXX(String str) {
-		return 0;
+		if(str.length() < 2) {
+			return 0;
+		}
+		int count = 0;
+		for (int i = 0; i < str.length() - 1; i++) {
+			if(str.charAt(i) == 'x' && str.charAt(i+1) == 'x') {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	// url :: https://codingbat.com/prob/p186759
@@ -37,7 +56,7 @@ public class Warmup2 {
 	 * string is immediately followed by another "x".
 	 */
 	public boolean doubleX(String str) {
-		return false;
+		return (str.indexOf("x") != -1) && (str.indexOf("x") == str.indexOf("xx"));
 	}
 
 	// url :: https://codingbat.com/prob/p165666
@@ -46,7 +65,11 @@ public class Warmup2 {
 	 * starting with the first, so "Hello" yields "Hlo".
 	 */
 	public String stringBits(String str) {
-		return null;
+		String result = "";
+		for (int i = 0; i < str.length(); i = i + 2 ) {
+			result += str.charAt(i);
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p117334
@@ -55,7 +78,11 @@ public class Warmup2 {
 	 * "CCoCodCode".
 	 */
 	public String stringSplosion(String str) {
-		return null;
+		String result = "";
+		for (int i = 1; i < str.length() + 1; i++ ) {
+			result += str.substring(0,i);
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p178318
@@ -65,7 +92,19 @@ public class Warmup2 {
 	 * string, so "hixxxhi" yields 1 (we won't count the end substring).
 	 */
 	public int last2(String str) {
-		return 0;
+		if(str.length() < 3) {
+			return 0;
+		}
+		int count = 0;
+		int len = str.length();
+		char first = str.charAt(len - 2);
+		char second = str.charAt(len - 1);
+		for (int i = 0; i < len - 2; i++) {
+			if(str.charAt(i) == first && str.charAt(i+1) == second) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	// url :: https://codingbat.com/prob/p184031
@@ -73,7 +112,13 @@ public class Warmup2 {
 	 * Statement :: Given an array of ints, return the number of 9's in the array.
 	 */
 	public int arrayCount9(int[] nums) {
-		return 0;
+		int result = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if(nums[i] == 9) {
+				result++;
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p186031
@@ -82,6 +127,12 @@ public class Warmup2 {
 	 * elements in the array is a 9. The array length may be less than 4.
 	 */
 	public boolean arrayFront9(int[] nums) {
+		int len = nums.length < 4 ? nums.length : 4;
+		for (int i = 0; i < len; i++) {
+			if(nums[i] == 9) {
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -91,7 +142,19 @@ public class Warmup2 {
 	 * the array somewhere.
 	 */
 	public boolean array123(int[] nums) {
-		return false;
+		boolean isPresent_1 = false, isPresent_2 = false,isPresent_3 = false;
+		for (int i = 0; i < nums.length; i++) {
+			if(nums[i] == 1) {
+				isPresent_1 = true;
+			}
+			if(nums[i] == 2) {
+				isPresent_2 = true;
+			}
+			if(nums[i] == 3) {
+				isPresent_3 = true;
+			}
+		}
+		return isPresent_1 && isPresent_2 && isPresent_3;
 	}
 
 	// url :: https://codingbat.com/prob/p198640
@@ -102,7 +165,19 @@ public class Warmup2 {
 	 * in both strings.
 	 */
 	public int stringMatch(String a, String b) {
-		return 0;
+		int minLen = a.length() < b.length() ? a.length() : b.length();
+		if(minLen < 2) {
+			return 0;
+		}
+		int result = 0;
+		for (int i = 0; i < minLen - 1; i++) {
+			if(a.charAt(i) == b.charAt(i)) {
+				if(a.charAt(i + 1) == b.charAt(i + 1)) {
+					result++;
+				}
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p171260
@@ -111,7 +186,19 @@ public class Warmup2 {
 	 * removed. Except an "x" at the very start or end should not be removed.
 	 */
 	public String stringX(String str) {
-		return null;
+		if(str.length() < 3) {
+			return str;
+		}
+		String result = "" + str.charAt(0);
+		int len = str.length();
+		for (int i = 1; i < len - 1; i++) {
+			char current = str.charAt(i);
+			if(current != 'x') {
+				result += str.charAt(i);
+			}
+		}
+		result += str.charAt(len -1);
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p121596
@@ -120,7 +207,13 @@ public class Warmup2 {
 	 * 0,1, 4,5, 8,9 ... so "kittens" yields "kien".
 	 */
 	public String altPairs(String str) {
-		return null;
+		String result = "";
+		for (int i = 0; i < str.length(); i++) {
+			if(i % 4 != 2 && i % 4 != 3) {
+				result += str.charAt(i);
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p126212
@@ -130,7 +223,7 @@ public class Warmup2 {
 	 * "yak" strings will not overlap.
 	 */
 	public String stringYak(String str) {
-		return null;
+		return str.replaceAll("yak", "");
 	}
 
 	// url :: https://codingbat.com/prob/p110019
@@ -140,7 +233,13 @@ public class Warmup2 {
 	 * "6" is actually a 7.
 	 */
 	public int array667(int[] nums) {
-		return 0;
+		int result = 0;
+		for (int i = 0; i < nums.length - 1; i++) {
+			if(nums[i] == 6 && (nums[i + 1] == 6 || nums[i + 1] == 7) ) {
+				result++;
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p170221
@@ -150,7 +249,22 @@ public class Warmup2 {
 	 * contain any triples.
 	 */
 	public boolean noTriples(int[] nums) {
-		return false;
+		int len = nums.length;
+		if(len < 3) {
+			return true;
+		}
+		int count = 0;
+		for (int i = 0; i < len - 1; i++) {
+			if(nums[i] == nums[i+ 1]) {
+				count++;
+			} else {
+				count = 0;
+			}
+			if(count == 2) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	// url :: https://codingbat.com/prob/p167430
@@ -161,6 +275,18 @@ public class Warmup2 {
 	 * correct value.
 	 */
 	public boolean has271(int[] nums) {
+		int len = nums.length;
+		if(len < 3) {
+			return false;
+		}
+		for (int i = 0; i < len -2; i++) {
+			int value = nums[i];
+			if(value + 5 == nums[i + 1]) {
+				if(Math.abs(value - 1 - nums[i + 2]) < 3) {
+					return true;
+				}
+			}
+		}
 		return false;
 	}
 

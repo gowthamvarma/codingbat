@@ -9,7 +9,7 @@ public class Warmup2Tests {
 
 	Warmup2 warmup2 = new Warmup2();
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void stringTimes() {
 		assertEquals("HiHi", warmup2.stringTimes("Hi", 2));
@@ -24,7 +24,7 @@ public class Warmup2Tests {
 		assertEquals("codecodecode", warmup2.stringTimes("code", 3));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void frontTimes() {
 		assertEquals("ChoCho", warmup2.frontTimes("Chocolate", 2));
@@ -36,7 +36,7 @@ public class Warmup2Tests {
 		assertEquals("", warmup2.frontTimes("Abc", 0));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void countXX() {
 		assertEquals(1, warmup2.countXX("abcxx"));
@@ -50,7 +50,7 @@ public class Warmup2Tests {
 		assertEquals(2, warmup2.countXX("Kittensxxx"));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void doubleX() {
 		assertEquals(true, warmup2.doubleX("axxbb"));
@@ -66,7 +66,7 @@ public class Warmup2Tests {
 		assertEquals(false, warmup2.doubleX("xaxx"));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void stringBits() {
 		assertEquals("Hlo", warmup2.stringBits("Hello"));
@@ -81,7 +81,7 @@ public class Warmup2Tests {
 		assertEquals("happy", warmup2.stringBits("hxaxpxpxy"));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void stringSplosion() {
 		assertEquals("CCoCodCode", warmup2.stringSplosion("Code"));
@@ -96,7 +96,7 @@ public class Warmup2Tests {
 		assertEquals("BBaBad", warmup2.stringSplosion("Bad"));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void last2() {
 		assertEquals(1, warmup2.last2("hixxhi"));
@@ -114,7 +114,7 @@ public class Warmup2Tests {
 		assertEquals(0, warmup2.last2(""));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void arrayCount9() {
 		assertEquals(1, warmup2.arrayCount9(new int[] { 1, 2, 9 }));
@@ -126,7 +126,7 @@ public class Warmup2Tests {
 		assertEquals(1, warmup2.arrayCount9(new int[] { 9, 2, 4, 3, 1 }));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void arrayFront9() {
 		assertEquals(true, warmup2.arrayFront9(new int[] { 1, 2, 9, 3, 4 }));
@@ -143,7 +143,7 @@ public class Warmup2Tests {
 		assertEquals(true, warmup2.arrayFront9(new int[] { 3, 9, 2, 3, 3 }));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void array123() {
 		assertEquals(true, warmup2.array123(new int[] { 1, 1, 2, 3, 1 }));
@@ -158,7 +158,7 @@ public class Warmup2Tests {
 		assertEquals(false, warmup2.array123(new int[] {}));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void stringMatch() {
 		assertEquals(3, warmup2.stringMatch("xxcaazz", "xxbaaz"));
@@ -173,7 +173,7 @@ public class Warmup2Tests {
 		assertEquals(3, warmup2.stringMatch("iaxxai", "aaxxaaxx"));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void stringX() {
 		assertEquals("xHix", warmup2.stringX("xxHxix"));
@@ -186,7 +186,7 @@ public class Warmup2Tests {
 		assertEquals("", warmup2.stringX(""));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void altPairs() {
 		assertEquals("kien", warmup2.altPairs("kitten"));
@@ -199,7 +199,7 @@ public class Warmup2Tests {
 		assertEquals("ThThThth", warmup2.altPairs("ThisThatTheOther"));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void stringYak() {
 		assertEquals("pak", warmup2.stringYak("yakpak"));
@@ -211,7 +211,7 @@ public class Warmup2Tests {
 		assertEquals("xxxyyzzz", warmup2.stringYak("xxxyakyyyakzzz"));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void array667() {
 		assertEquals(1, warmup2.array667(new int[] { 6, 6, 2 }));
@@ -229,7 +229,7 @@ public class Warmup2Tests {
 		assertEquals(1, warmup2.array667(new int[] { 1, 2, 3, 6, 6 }));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void noTriples() {
 		assertEquals(true, warmup2.noTriples(new int[] { 1, 1, 2, 2, 1 }));
@@ -243,7 +243,7 @@ public class Warmup2Tests {
 		assertEquals(true, warmup2.noTriples(new int[] {}));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void has271() {
 		assertEquals(true, warmup2.has271(new int[] { 1, 2, 7, 1 }));
