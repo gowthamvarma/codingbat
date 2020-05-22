@@ -13,7 +13,7 @@ public class Functional2Tests {
 
 	Functional2 functional2 = new Functional2();
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void noNeg() {
 
@@ -60,7 +60,7 @@ public class Functional2Tests {
 		assertEquals(expectedOutput7, functional2.noNeg(input7));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void no9() {
 
@@ -107,7 +107,7 @@ public class Functional2Tests {
 		assertEquals(expectedOutput7, functional2.no9(input7));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void noTeen() {
 
@@ -160,7 +160,7 @@ public class Functional2Tests {
 		assertEquals(expectedOutput8, functional2.noTeen(input8));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void noZ() {
 
@@ -201,7 +201,7 @@ public class Functional2Tests {
 		assertEquals(expectedOutput6, functional2.noZ(input6));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void noLong() {
 
@@ -254,7 +254,7 @@ public class Functional2Tests {
 		assertEquals(expectedOutput8, functional2.noLong(input8));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void no34() {
 
@@ -325,7 +325,7 @@ public class Functional2Tests {
 		assertEquals(expectedOutput11, functional2.no34(input11));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void noYY() {
 
@@ -390,7 +390,7 @@ public class Functional2Tests {
 		assertEquals(expectedOutput10, functional2.noYY(input10));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void two2() {
 
@@ -437,7 +437,7 @@ public class Functional2Tests {
 		assertEquals(expectedOutput7, functional2.two2(input7));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void square56() {
 

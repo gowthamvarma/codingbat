@@ -1,6 +1,8 @@
 package problems;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Functional2 {
 	// url :: https://codingbat.com/java/Functional-2
@@ -11,7 +13,8 @@ public class Functional2 {
 	 * omitting any that are less than 0.
 	 */
 	public List<Integer> noNeg(List<Integer> nums) {
-		return null;
+		return nums.stream().filter(x -> x > -1 )
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	// url :: https://codingbat.com/prob/p124510
@@ -20,7 +23,8 @@ public class Functional2 {
 	 * numbers except omitting any that end with 9. (Note: % by 10)
 	 */
 	public List<Integer> no9(List<Integer> nums) {
-		return null;
+		return nums.stream().filter(x -> x % 10 != 9 )
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	// url :: https://codingbat.com/prob/p137274
@@ -29,7 +33,8 @@ public class Functional2 {
 	 * omitting any that are between 13 and 19 inclusive.
 	 */
 	public List<Integer> noTeen(List<Integer> nums) {
-		return null;
+		return nums.stream().filter(x -> x < 13 || x > 19 )
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	// url :: https://codingbat.com/prob/p105671
@@ -39,7 +44,8 @@ public class Functional2 {
 	 * boolean)
 	 */
 	public List<String> noZ(List<String> strings) {
-		return null;
+		return strings.stream().filter(str -> !str.contains("z") )
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	// url :: https://codingbat.com/prob/p194496
@@ -48,7 +54,8 @@ public class Functional2 {
 	 * any string length 4 or more.
 	 */
 	public List<String> noLong(List<String> strings) {
-		return null;
+		return strings.stream().filter(str -> str.length() < 4 )
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	// url :: https://codingbat.com/prob/p184496
@@ -57,7 +64,8 @@ public class Functional2 {
 	 * any string length 3 or 4.
 	 */
 	public List<String> no34(List<String> strings) {
-		return null;
+		return strings.stream().filter(str -> str.length() < 3 || str.length() > 4 )
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	// url :: https://codingbat.com/prob/p115967
@@ -67,7 +75,8 @@ public class Functional2 {
 	 * substring anywhere.
 	 */
 	public List<String> noYY(List<String> strings) {
-		return null;
+		return strings.stream().map(x -> x + "y").filter(str -> !str.contains("yy") )
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	// url :: https://codingbat.com/prob/p148198
@@ -76,7 +85,8 @@ public class Functional2 {
 	 * numbers multiplied by 2, omitting any of the resulting numbers that end in 2.
 	 */
 	public List<Integer> two2(List<Integer> nums) {
-		return null;
+		return nums.stream().map(x -> x * 2).filter(x -> x % 10 != 2 )
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	// url :: https://codingbat.com/prob/p132748
@@ -86,7 +96,8 @@ public class Functional2 {
 	 * in 5 or 6.
 	 */
 	public List<Integer> square56(List<Integer> nums) {
-		return null;
+		return nums.stream().map(x -> 10 + x * x).filter(x -> x % 10 != 5 && x % 10 != 6 )
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 }
