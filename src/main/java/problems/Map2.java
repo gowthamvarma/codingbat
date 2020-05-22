@@ -1,5 +1,6 @@
 package problems;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Map2 {
@@ -13,7 +14,11 @@ public class Map2 {
 	 * more complicated counting later, but for this problem the value is simply 0.
 	 */
 	public Map<String, Integer> word0(String[] strings) {
-		return null;
+		Map<String, Integer> result = new HashMap<>();
+		for (int i = 0; i < strings.length; i++) {
+			result.put(strings[i], 0);
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p125327
@@ -23,7 +28,11 @@ public class Map2 {
 	 * that string's length.
 	 */
 	public Map<String, Integer> wordLen(String[] strings) {
-		return null;
+		Map<String, Integer> result = new HashMap<>();
+		for (int i = 0; i < strings.length; i++) {
+			result.put(strings[i], strings[i].length());
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p126332
@@ -33,7 +42,15 @@ public class Map2 {
 	 * key with its last character as the value.
 	 */
 	public Map<String, String> pairs(String[] strings) {
-		return null;
+		Map<String, String> result = new HashMap<>();
+		if(strings.length == 0) {
+			return result;
+		}
+		for (int i = 0; i < strings.length; i++) {
+			result.put(""+strings[i].charAt(0), 
+					""+strings[i].charAt(strings[i].length() - 1));
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p117630
@@ -43,7 +60,16 @@ public class Map2 {
 	 * value the number of times that string appears in the array.
 	 */
 	public Map<String, Integer> wordCount(String[] strings) {
-		return null;
+		Map<String, Integer> result = new HashMap<>();
+		for (int i = 0; i < strings.length; i++) {
+			Integer count = result.get(strings[i]);
+			if(count == null) {
+				result.put(strings[i], 1);
+			} else {
+				result.put(strings[i], count + 1);
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p168493
@@ -54,7 +80,17 @@ public class Map2 {
 	 * order they appear in the array.
 	 */
 	public Map<String, String> firstChar(String[] strings) {
-		return null;
+		Map<String, String> result = new HashMap<>();
+		for (int i = 0; i < strings.length; i++) {
+			String key = "" + strings[i].charAt(0);
+			String current = result.get(key);
+			if(current == null) {
+				result.put(key, "" + strings[i]);
+			} else {
+				result.put(key, current + strings[i]);
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p103593
@@ -65,7 +101,24 @@ public class Map2 {
 	 * a 2nd time.
 	 */
 	public String wordAppend(String[] strings) {
-		return null;
+		int len = strings.length;
+		if(len == 0) {
+			return "";
+		}
+		String result = "";
+		Map<String,Integer> countMap = new HashMap<>();
+		for (int i = 0; i < strings.length; i++) {
+			Integer current = countMap.get(strings[i]);
+			if(current == null) {
+				countMap.put(strings[i], 1);
+			} else {
+				countMap.put(strings[i], current + 1);
+				if(current % 2 == 1) {
+					result += strings[i];
+				}
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p190862
@@ -75,7 +128,16 @@ public class Map2 {
 	 * or more times in the array.
 	 */
 	public Map<String, Boolean> wordMultiple(String[] strings) {
-		return null;
+		Map<String, Boolean> result = new HashMap<String, Boolean>();;
+		for (int i = 0; i < strings.length; i++) {
+			Boolean current = result.get(strings[i]);
+			if(current == null) {
+				result.put(strings[i], false);
+			} else {
+				result.put(strings[i], true);
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p134133
@@ -88,7 +150,21 @@ public class Map2 {
 	 * making just one pass over the array. More difficult than it looks.
 	 */
 	public String[] allSwap(String[] strings) {
-		return null;
+		Map<String, Integer> myMap = new HashMap<>();
+		for (int i = 0; i < strings.length; i++) {
+			Integer index = myMap.get(strings[i].substring(0,1));
+			if(index == null) {
+				 myMap.put(strings[i].substring(0,1),i);
+			} else {
+				// swapping
+				String temp = strings[index];
+				strings[index] = strings[i];
+				strings[i] = temp;
+				// clearing
+				 myMap.remove(strings[i].substring(0,1));
+			}
+		}
+		return strings;
 	}
 
 	// url :: https://codingbat.com/prob/p150113
@@ -102,7 +178,23 @@ public class Map2 {
 	 * difficult than it looks.
 	 */
 	public String[] firstSwap(String[] strings) {
-		return null;
+		Map<String, Integer> myMap = new HashMap<>();
+		for (int i = 0; i < strings.length; i++) {
+			Integer index = myMap.get(strings[i].substring(0,1));
+			if(index == null) {
+				 myMap.put(strings[i].substring(0,1),i);
+			} else if(index == -1) {
+				
+			} else {
+				// swapping
+				String temp = strings[index];
+				strings[index] = strings[i];
+				strings[i] = temp;
+				// clearing
+				myMap.put(strings[i].substring(0,1),-1);
+			}
+		}
+		return strings;
 	}
 
 }

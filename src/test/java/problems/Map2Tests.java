@@ -1,5 +1,6 @@
 package problems;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.HashMap;
@@ -12,7 +13,7 @@ public class Map2Tests {
 
 	Map2 map2 = new Map2();
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void word0() {
 
@@ -46,7 +47,7 @@ public class Map2Tests {
 		assertEquals(expectedOutput5, map2.word0(input5));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void wordLen() {
 
@@ -79,7 +80,7 @@ public class Map2Tests {
 		assertEquals(expectedOutput5, map2.wordLen(input5));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void pairs() {
 
@@ -126,7 +127,7 @@ public class Map2Tests {
 		assertEquals(expectedOutput7, map2.pairs(input7));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void wordCount() {
 
@@ -195,10 +196,10 @@ public class Map2Tests {
 		expectedOutput9.put("tea", 1);
 		expectedOutput9.put("coffee", 1);
 		String[] input9 = { "apple", "banana", "apple", "apple", "tea", "coffee", "banana" };
-		assertEquals(expectedOutput8, map2.wordCount(input9));
+		assertEquals(expectedOutput9, map2.wordCount(input9));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void firstChar() {
 
@@ -229,7 +230,7 @@ public class Map2Tests {
 		assertEquals(expectedOutput4, map2.firstChar(input4));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void wordAppend() {
 
@@ -278,7 +279,7 @@ public class Map2Tests {
 		assertEquals(expectedOutput11, map2.wordAppend(input11));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void wordMultiple() {
 
@@ -322,7 +323,7 @@ public class Map2Tests {
 		assertEquals(expectedOutput6, map2.wordMultiple(input6));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void allSwap() {
 		String[] input1 = { "ab", "ac" };
@@ -347,19 +348,19 @@ public class Map2Tests {
 		String[] expectedOutput9 = {};
 		String[] expectedOutput10 = { "a", "b", "c", "xx", "yy", "zz" };
 
-		assertEquals(expectedOutput1, map2.allSwap(input1));
-		assertEquals(expectedOutput2, map2.allSwap(input2));
-		assertEquals(expectedOutput3, map2.allSwap(input3));
-		assertEquals(expectedOutput4, map2.allSwap(input4));
-		assertEquals(expectedOutput5, map2.allSwap(input5));
-		assertEquals(expectedOutput6, map2.allSwap(input6));
-		assertEquals(expectedOutput7, map2.allSwap(input7));
-		assertEquals(expectedOutput8, map2.allSwap(input8));
-		assertEquals(expectedOutput9, map2.allSwap(input9));
-		assertEquals(expectedOutput10, map2.allSwap(input10));
+		assertArrayEquals(expectedOutput1, map2.allSwap(input1));
+		assertArrayEquals(expectedOutput2, map2.allSwap(input2));
+		assertArrayEquals(expectedOutput3, map2.allSwap(input3));
+		assertArrayEquals(expectedOutput4, map2.allSwap(input4));
+		assertArrayEquals(expectedOutput5, map2.allSwap(input5));
+		assertArrayEquals(expectedOutput6, map2.allSwap(input6));
+		assertArrayEquals(expectedOutput7, map2.allSwap(input7));
+		assertArrayEquals(expectedOutput8, map2.allSwap(input8));
+		assertArrayEquals(expectedOutput9, map2.allSwap(input9));
+		assertArrayEquals(expectedOutput10, map2.allSwap(input10));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void firstSwap() {
 
@@ -385,16 +386,16 @@ public class Map2Tests {
 		String[] expectedOutput9 = {};
 		String[] expectedOutput10 = { "a", "b", "c", "xx", "yy", "zz" };
 
-		assertEquals(expectedOutput1, map2.firstSwap(input1));
-		assertEquals(expectedOutput2, map2.firstSwap(input2));
-		assertEquals(expectedOutput3, map2.firstSwap(input3));
-		assertEquals(expectedOutput4, map2.firstSwap(input4));
-		assertEquals(expectedOutput5, map2.firstSwap(input5));
-		assertEquals(expectedOutput6, map2.firstSwap(input6));
-		assertEquals(expectedOutput7, map2.firstSwap(input7));
-		assertEquals(expectedOutput8, map2.firstSwap(input8));
-		assertEquals(expectedOutput9, map2.firstSwap(input9));
-		assertEquals(expectedOutput10, map2.firstSwap(input10));
+		assertArrayEquals(expectedOutput1, map2.firstSwap(input1));
+		assertArrayEquals(expectedOutput2, map2.firstSwap(input2));
+		assertArrayEquals(expectedOutput3, map2.firstSwap(input3));
+		assertArrayEquals(expectedOutput4, map2.firstSwap(input4));
+		assertArrayEquals(expectedOutput5, map2.firstSwap(input5));
+		assertArrayEquals(expectedOutput6, map2.firstSwap(input6));
+		assertArrayEquals(expectedOutput7, map2.firstSwap(input7));
+		assertArrayEquals(expectedOutput8, map2.firstSwap(input8));
+		assertArrayEquals(expectedOutput9, map2.firstSwap(input9));
+		assertArrayEquals(expectedOutput10, map2.firstSwap(input10));
 		
 	}
 
