@@ -1,6 +1,8 @@
 package problems;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Functional1 {
 	// url :: https://codingbat.com/java/Functional-1
@@ -11,7 +13,8 @@ public class Functional1 {
 	 * multiplied by 2.
 	 */
 	public List<Integer> doubling(List<Integer> nums) {
-		return null;
+		return nums.stream().map(x -> x * 2)
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	// url :: https://codingbat.com/prob/p139586
@@ -20,7 +23,8 @@ public class Functional1 {
 	 * multiplied with itself.
 	 */
 	public List<Integer> square(List<Integer> nums) {
-		return null;
+		return nums.stream().map(x -> x * x)
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	// url :: https://codingbat.com/prob/p170181
@@ -29,7 +33,8 @@ public class Functional1 {
 	 * added at its end.
 	 */
 	public List<String> addStar(List<String> strings) {
-		return null;
+		return strings.stream().map(x -> x + "*")
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	// url :: https://codingbat.com/prob/p181634
@@ -38,7 +43,8 @@ public class Functional1 {
 	 * replaced by 3 copies of the string concatenated together.
 	 */
 	public List<String> copies3(List<String> strings) {
-		return null;
+		return strings.stream().map(x -> x + x + x)
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	// url :: https://codingbat.com/prob/p177528
@@ -47,7 +53,8 @@ public class Functional1 {
 	 * added at its start and end.
 	 */
 	public List<String> moreY(List<String> strings) {
-		return null;
+		return strings.stream().map(x -> "y" + x + "y")
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	// url :: https://codingbat.com/prob/p103869
@@ -56,7 +63,8 @@ public class Functional1 {
 	 * added to 1 and the result is multiplied by 10.
 	 */
 	public List<Integer> math1(List<Integer> nums) {
-		return null;
+		return nums.stream().map(x -> 10 * (x + 1) )
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	// url :: https://codingbat.com/prob/p152194
@@ -65,7 +73,8 @@ public class Functional1 {
 	 * the rightmost digits. (Note: use %)
 	 */
 	public List<Integer> rightDigit(List<Integer> nums) {
-		return null;
+		return nums.stream().map(x -> x % 10 )
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	// url :: https://codingbat.com/prob/p186894
@@ -74,7 +83,8 @@ public class Functional1 {
 	 * converted to lower case (Note: String toLowerCase() method).
 	 */
 	public List<String> lower(List<String> strings) {
-		return null;
+		return strings.stream().map(x -> x.toLowerCase())
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 	// url :: https://codingbat.com/prob/p105967
@@ -83,7 +93,8 @@ public class Functional1 {
 	 * its "x" removed.
 	 */
 	public List<String> noX(List<String> strings) {
-		return null;
+		return strings.stream().map(x -> x.replaceAll("x", ""))
+				.collect(Collectors.toCollection(ArrayList::new));
 	}
 
 }

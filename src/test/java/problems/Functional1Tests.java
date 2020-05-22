@@ -13,7 +13,7 @@ public class Functional1Tests {
 
 	Functional1 functional1 = new Functional1();
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void doubling() {
 
@@ -66,7 +66,7 @@ public class Functional1Tests {
 		assertEquals(expectedOutput8, functional1.doubling(input8));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void square() {
 
@@ -107,7 +107,7 @@ public class Functional1Tests {
 		assertEquals(expectedOutput6, functional1.square(input6));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void addStar() {
 
@@ -148,7 +148,7 @@ public class Functional1Tests {
 		assertEquals(expectedOutput6, functional1.addStar(input6));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void copies3() {
 
@@ -189,7 +189,7 @@ public class Functional1Tests {
 		assertEquals(expectedOutput6, functional1.copies3(input6));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void moreY() {
 
@@ -230,7 +230,7 @@ public class Functional1Tests {
 		assertEquals(expectedOutput6, functional1.moreY(input6));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void math1() {
 
@@ -277,7 +277,7 @@ public class Functional1Tests {
 		assertEquals(expectedOutput7, functional1.math1(input7));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void rightDigit() {
 
@@ -324,7 +324,7 @@ public class Functional1Tests {
 		assertEquals(expectedOutput7, functional1.rightDigit(input7));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void lower() {
 
@@ -365,7 +365,7 @@ public class Functional1Tests {
 		assertEquals(expectedOutput6, functional1.lower(input6));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void noX() {
 
