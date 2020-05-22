@@ -110,7 +110,9 @@ public class Warmup1 {
 	 * inclusive).
 	 */
 	public String missingChar(String str, int n) {
-		return null;
+		StringBuilder sb = new StringBuilder(str);
+		sb.deleteCharAt(n);
+		return sb.toString();
 	}
 
 	// url :: https://codingbat.com/prob/p123384
@@ -119,7 +121,11 @@ public class Warmup1 {
 	 * chars have been exchanged.
 	 */
 	public String frontBack(String str) {
-		return null;
+		int length = str.length();
+		if(length < 2) {
+			return str;
+		}
+		return "" + str.charAt(length - 1) + str.substring(1, length - 1) + str.charAt(0);
 	}
 
 	// url :: https://codingbat.com/prob/p136351
@@ -129,7 +135,8 @@ public class Warmup1 {
 	 * there. Return a new string which is 3 copies of the front.
 	 */
 	public String front3(String str) {
-		return null;
+		int end = str.length() < 3 ? str.length() : 3;
+		return str.substring(0,end) + str.substring(0,end) + str.substring(0,end);
 	}
 
 	// url :: https://codingbat.com/prob/p161642
@@ -139,7 +146,7 @@ public class Warmup1 {
 	 * original string will be length 1 or more.
 	 */
 	public String backAround(String str) {
-		return null;
+		return str.charAt(str.length() - 1 ) + str + str.charAt(str.length() - 1 );
 	}
 
 	// url :: https://codingbat.com/prob/p112564
@@ -159,7 +166,8 @@ public class Warmup1 {
 	 * are there.
 	 */
 	public String front22(String str) {
-		return null;
+		int end = str.length() < 2 ? str.length() : 2;
+		return str.substring(0, end) + str + str.substring(0, end);
 	}
 
 	// url :: https://codingbat.com/prob/p191022
@@ -168,7 +176,7 @@ public class Warmup1 {
 	 * false otherwise.
 	 */
 	public boolean startHi(String str) {
-		return false;
+		return str.startsWith("hi");
 	}
 
 	// url :: https://codingbat.com/prob/p192082
@@ -218,7 +226,10 @@ public class Warmup1 {
 	 * string unchanged.
 	 */
 	public String delDel(String str) {
-		return null;
+		if(str.indexOf("del") == 1) {
+			return str.replaceFirst("del", "");
+		}
+		return str;
 	}
 
 	// url :: https://codingbat.com/prob/p151713
@@ -227,7 +238,7 @@ public class Warmup1 {
 	 * 'm' can be anything, so "pix", "9ix" .. all count.
 	 */
 	public boolean mixStart(String str) {
-		return false;
+		return str.indexOf("ix") == 1;
 	}
 
 	// url :: https://codingbat.com/prob/p199720
@@ -237,7 +248,18 @@ public class Warmup1 {
 	 * only if it is 'z', so "ozymandias" yields "oz".
 	 */
 	public String startOz(String str) {
-		return null;
+		String result = "";
+		if(str.length() > 0) {
+			if(str.charAt(0) == 'o') {
+				result += "o";
+			}
+		}
+		if(str.length() > 1) {
+			if(str.charAt(1) == 'z') {
+				result += "z";
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p101887
@@ -245,7 +267,11 @@ public class Warmup1 {
 	 * Statement :: Given three int values, a b c, return the largest.
 	 */
 	public int intMax(int a, int b, int c) {
-		return 0;
+		if(a > b) {
+			return a > c ? a : c; 
+		} else {
+			return b > c ? b : c; 
+		}
 	}
 
 	// url :: https://codingbat.com/prob/p172021
@@ -255,6 +281,14 @@ public class Warmup1 {
 	 * the absolute value of a number.
 	 */
 	public int close10(int a, int b) {
+		int a1 = Math.abs(10 - a);
+		int b1 = Math.abs(10 - b);
+		if(a1 < b1) {
+			return a;
+		}
+		if(a1 > b1) {
+			return b;
+		}
 		return 0;
 	}
 
@@ -264,6 +298,12 @@ public class Warmup1 {
 	 * 30..40 inclusive, or they are both in the range 40..50 inclusive.
 	 */
 	public boolean in3050(int a, int b) {
+		if(a >= 30 && a <= 40 && b >= 30 && b <= 40) {
+			return true;
+		}
+		if(a >= 40 && a <= 50 && b >= 40 && b <= 50) {
+			return true;
+		}
 		return false;
 	}
 
@@ -273,6 +313,19 @@ public class Warmup1 {
 	 * the range 10..20 inclusive, or return 0 if neither is in that range.
 	 */
 	public int max1020(int a, int b) {
+		if(a >= 10 && a <= 20 && b >= 10 && b <= 20) {
+			return a > b ? a : b;
+		}
+		if(b < 10 || b > 20) {
+			if(a >= 10 && a <= 20) {
+				return a;
+			}
+		}
+		if(a < 10 || a > 20) {
+			if(b >= 10 && b <= 20) {
+				return b;
+			}
+		}
 		return 0;
 	}
 
@@ -282,7 +335,13 @@ public class Warmup1 {
 	 * chars.
 	 */
 	public boolean stringE(String str) {
-		return false;
+		int result = 0;
+		for (int i = 0; i < str.length(); i++) {
+			if(str.charAt(i) == 'e') {
+				result++;
+			}
+		}
+		return result > 0 && result < 4;
 	}
 
 	// url :: https://codingbat.com/prob/p125339
@@ -292,7 +351,7 @@ public class Warmup1 {
 	 * computes remainders, so 17 % 10 is 7.
 	 */
 	public boolean lastDigit(int a, int b) {
-		return false;
+		return a % 10 == b % 10;
 	}
 
 	// url :: https://codingbat.com/prob/p125268
@@ -302,7 +361,10 @@ public class Warmup1 {
 	 * there. Note that str.toUpperCase() returns the uppercase version of a string.
 	 */
 	public String endUp(String str) {
-		return null;
+		if(str.length() < 4) {
+			return str.toUpperCase();
+		}
+		return str.substring(0, str.length() - 3) +  str.substring(str.length() - 3).toUpperCase();
 	}
 
 	// url :: https://codingbat.com/prob/p196441
@@ -312,7 +374,11 @@ public class Warmup1 {
 	 * use char 0, 3, 6, ... and so on. N is 1 or more.
 	 */
 	public String everyNth(String str, int n) {
-		return null;
+		String result = "";
+		for (int i = 0; i < str.length(); i += n) {
+			result += str.charAt(i);
+		}
+		return result;
 	}
 
 }
