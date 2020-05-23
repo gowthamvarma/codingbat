@@ -1,5 +1,9 @@
 package problems;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class AP1 {
 	// url :: https://codingbat.com/java/AP-1
 
@@ -9,7 +13,12 @@ public class AP1 {
 	 * greater than the one before. The array will be length 2 or more.
 	 */
 	public boolean scoresIncreasing(int[] scores) {
-		return false;
+		for (int i = 0; i < scores.length - 1; i++) {
+			if(scores[i] > scores[i+1]) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	// url :: https://codingbat.com/prob/p179487
@@ -18,6 +27,11 @@ public class AP1 {
 	 * next to each other in the array. The array length will be at least 2.
 	 */
 	public boolean scores100(int[] scores) {
+		for (int i = 0; i < scores.length - 1; i++) {
+			if(scores[i] == 100 && scores[i+1] == 100) {
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -28,6 +42,11 @@ public class AP1 {
 	 * most 2, such as with {3, 4, 5} or {3, 5, 5}.
 	 */
 	public boolean scoresClump(int[] scores) {
+		for (int i = 0; i < scores.length - 2; i++) {
+			if(scores[i + 1] - scores[i] < 3 && scores[i + 2] - scores[i] < 3) {
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -44,7 +63,18 @@ public class AP1 {
 	 * but here we use ints so the expected results are exact.
 	 */
 	public int scoresAverage(int[] scores) {
-		return 0;
+		int len = scores.length;
+		int average_1 = avg(scores, 0,len/2);
+		int average_2 = avg(scores, len/2 , len);
+		return average_1 > average_2 ? average_1 : average_2;
+	}
+
+	private int avg(int[] scores, int start, int end) {
+		int sum = 0;
+		for (int i = start; i < end; i++) {
+			sum += scores[i];
+		}
+		return sum / (end - start);
 	}
 
 	// url :: https://codingbat.com/prob/p124620
@@ -53,7 +83,13 @@ public class AP1 {
 	 * strings with the given length.
 	 */
 	public int wordsCount(String[] words, int len) {
-		return 0;
+		int result = 0;
+		for (int i = 0; i < words.length; i++) {
+			if(words[i].length() == len) {
+				result++;
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p183837
@@ -62,7 +98,11 @@ public class AP1 {
 	 * first N strings. N will be in the range 1..length.
 	 */
 	public String[] wordsFront(String[] words, int n) {
-		return null;
+		String[] result = new String[n];
+		for (int i = 0; i < n; i++) {
+			result[i] = words[i];
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p183407
@@ -72,7 +112,17 @@ public class AP1 {
 	 * below which is more difficult because it uses arrays.
 	 */
 	public String[] wordsWithoutList(String[] words, int len) {
-		return null;
+		List<String> temp = new ArrayList<String>();
+		for (int i = 0; i < words.length; i++) {
+			if(words[i].length() != len) {
+				temp.add(words[i]);
+			}
+		}
+		
+		Object[] gfg= temp.toArray();
+		String[] strArray = Arrays.copyOf(gfg,gfg.length,String[].class);
+		
+		return strArray;
 	}
 
 	// url :: https://codingbat.com/prob/p191212
@@ -81,6 +131,12 @@ public class AP1 {
 	 * Note: use % to get the rightmost digit, and / to discard the rightmost digit.
 	 */
 	public boolean hasOne(int n) {
+		while(n > 0) {
+			if(n % 10 == 1) {
+				return true;
+			}
+			n = n / 10;
+		}
 		return false;
 	}
 
@@ -93,7 +149,18 @@ public class AP1 {
 	 * Note: use % to get the rightmost digit, and / to discard the rightmost digit.
 	 */
 	public boolean dividesSelf(int n) {
-		return false;
+		int number = n;
+		while(n > 0) {
+			int digit = n % 10;
+			if(digit == 0) {
+				return false;
+			}
+			if(number % digit != 0)  {
+				return false;
+			}
+			n = n / 10;
+		}
+		return true;
 	}
 
 	// url :: https://codingbat.com/prob/p134174
@@ -103,7 +170,17 @@ public class AP1 {
 	 * original array will contain at least "count" even numbers.
 	 */
 	public int[] copyEvens(int[] nums, int count) {
-		return null;
+		int[] result = new int[count];
+		int index = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if(nums[i] % 2 == 0) {
+				result[index++] = nums[i];
+			}
+			if(index == count) {
+				break;
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p130124
@@ -115,7 +192,18 @@ public class AP1 {
 	 * endy. The original array will contain at least "count" endy numbers.
 	 */
 	public int[] copyEndy(int[] nums, int count) {
-		return null;
+		int[] result = new int[count];
+		int index = 0;
+		for (int i = 0; i < nums.length; i++) {
+			int num = nums[i];
+			if( (num >= 0 && num <= 10) || (num >= 90 && num <= 100)) {
+				result[index++] = nums[i];
+			}
+			if(index == count) {
+				break;
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p139677
@@ -127,7 +215,19 @@ public class AP1 {
 	 * including 0.
 	 */
 	public int matchUp(String[] a, String[] b) {
-		return 0;
+		int result = 0;
+		for (int i = 0; i < a.length; i++) {
+			String str_a = a[i];
+			String str_b = b[i];
+			if(str_a != null && str_a.length() > 0) {
+				if(str_b != null && str_b.length() > 0) {
+					if(str_a.charAt(0) == str_b.charAt(0)) {
+						result++;
+					}
+				}
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p180365
@@ -140,7 +240,19 @@ public class AP1 {
 	 * each blank answer.
 	 */
 	public int scoreUp(String[] key, String[] answers) {
-		return 0;
+		int result = 0;
+		for (int i = 0; i < key.length; i++) {
+			String str_key = key[i];
+			String str_answers = answers[i];
+			if(str_answers.equals("?")) {
+				
+			} else if(str_answers.equals(str_key)) {
+				result += 4;
+			} else {
+				result -= 1;
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p121236
@@ -151,7 +263,20 @@ public class AP1 {
 	 * then copy over the correct strings.
 	 */
 	public String[] wordsWithout(String[] words, String target) {
-		return null;
+		int count = 0;
+		for (int i = 0; i < words.length; i++) {
+			if(words[i].equals(target)){
+				count++;
+			}
+		}
+		int index = 0;
+		String[] result = new String[words.length - count];
+		for (int i = 0; i < words.length; i++) {
+			if(!words[i].equals(target)){
+				result[index++] = words[i];
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p140485
@@ -164,7 +289,19 @@ public class AP1 {
 	 * scoresSpecial() method in the JavaBat text area.
 	 */
 	public int scoresSpecial(int[] a, int[] b) {
-		return 0;
+		int special_a = specialScore(a);
+		int special_b = specialScore(b);
+		return special_a + special_b ;
+	}
+
+	private int specialScore(int[] a) {
+		int result = 0;
+		for (int i = 0; i < a.length; i++) {
+			if(a[i] % 10 == 0 && a[i] > result) {
+				result = a[i];
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p148138
@@ -177,7 +314,11 @@ public class AP1 {
 	 * array with start <= end.
 	 */
 	public int sumHeights(int[] heights, int start, int end) {
-		return 0;
+		int result = 0;
+		for (int i = start; i < end; i++) {
+			result += Math.abs(heights[i] - heights[i+1]);
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p157900
@@ -191,7 +332,17 @@ public class AP1 {
 	 * indexes into the array with start <= end.
 	 */
 	public int sumHeights2(int[] heights, int start, int end) {
-		return 0;
+		int result = 0;
+		for (int i = start; i < end; i++) {
+			int change = heights[i + 1] - heights[i];
+			if(change > 0) {
+				result +=  2 * change;
+			} else {
+				result += -1 * change;
+			}
+			
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p197710
@@ -204,7 +355,13 @@ public class AP1 {
 	 * indexes into the array with start <= end.
 	 */
 	public int bigHeights(int[] heights, int start, int end) {
-		return 0;
+		int result = 0;
+		for (int i = start; i < end; i++) {
+			 if(Math.abs(heights[i] - heights[i+1]) >= 5) {
+				 result++;
+			 }
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p143482
@@ -220,7 +377,26 @@ public class AP1 {
 	 * the same.)
 	 */
 	public int userCompare(String aName, int aId, String bName, int bId) {
-		return 0;
+		int result = aName.compareTo(bName);
+		if(result < 0) {
+			return -1;
+		} 
+		if(result > 0) {
+			return 1;
+		}
+		if(result == 0) {
+			if(aId < bId) {
+				return -1;
+			} 
+			if(aId > bId) {
+				return 1;
+			} 
+			// redundant but good to write
+			if(aId == bId) {
+				return 0;
+			}
+		}
+		return result;
 	}
 
 	// url :: https://codingbat.com/prob/p139150
@@ -234,7 +410,25 @@ public class AP1 {
 	 * order, copying elements directly to the new array.
 	 */
 	public String[] mergeTwo(String[] a, String[] b, int n) {
-		return null;
+		String[] result = new String[n];
+	    int index_a = 0;
+	    int index_b = 0;
+	        
+	    for(int index = 0; index < n; index++) {
+	        if(a[index_a].compareTo(b[index_b]) < 0) {
+	            result[index] = a[index_a];
+	            index_a++;
+	        } else if(a[index_a].compareTo(b[index_b]) > 0) {
+	            result[index] = b[index_b];
+	            index_b++;
+	        } else {
+	            result[index] = a[index_a];
+	            index_a++;
+	            index_b++;
+	        }
+	    }
+	                                                                        
+	    return result;
 	}
 
 	// url :: https://codingbat.com/prob/p100369
@@ -246,7 +440,35 @@ public class AP1 {
 	 * order.
 	 */
 	public int commonTwo(String[] a, String[] b) {
-		return 0;
+		int count = 0;
+		int index_a = 0;
+		int index_b = 0;
+
+		if (a[0].equals(b[0])) {
+			count++;
+			index_a++;
+			index_b++;
+		} else if (a[0].compareTo(b[0]) < 0) {
+			index_a++;
+		} else {
+			index_b++;
+		}
+
+		while (index_a < a.length && index_b < b.length) {
+			if (index_a > 0 && a[index_a - 1].equals(a[index_a])) {
+				index_a++;
+			} else if (a[index_a].equals(b[index_b])) {
+				count++;
+				index_a++;
+				index_b++;
+			} else if (a[index_a].compareTo(b[index_b]) < 0) {
+				index_a++;
+			} else {
+				index_b++;
+			}
+		}
+
+		return count;
 	}
 
 }

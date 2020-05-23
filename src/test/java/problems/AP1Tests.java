@@ -1,5 +1,6 @@
 package problems;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Disabled;
@@ -9,7 +10,7 @@ public class AP1Tests {
 
 	AP1 aP1 = new AP1();
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void scoresIncreasing() {
 		assertEquals(true, aP1.scoresIncreasing(new int[] { 1, 3, 4 }));
@@ -20,7 +21,7 @@ public class AP1Tests {
 		assertEquals(true, aP1.scoresIncreasing(new int[] { -5, 4, 11 }));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void scores100() {
 		assertEquals(true, aP1.scores100(new int[] { 1, 100, 100 }));
@@ -31,7 +32,7 @@ public class AP1Tests {
 		assertEquals(false, aP1.scores100(new int[] { 1, 2, 100, 4, 5 }));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void scoresClump() {
 		assertEquals(true, aP1.scoresClump(new int[] { 3, 4, 5 }));
@@ -45,7 +46,7 @@ public class AP1Tests {
 		assertEquals(false, aP1.scoresClump(new int[] { 4, 5, 8 }));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void scoresAverage() {
 		assertEquals(4, aP1.scoresAverage(new int[] { 2, 2, 4, 4 }));
@@ -56,7 +57,7 @@ public class AP1Tests {
 		assertEquals(5, aP1.scoresAverage(new int[] { 5, 4, 5, 6, 2, 1, 2, 3 }));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void wordsCount() {
 		assertEquals(2, aP1.wordsCount(new String[] { "a", "bb", "b", "ccc" }, 1));
@@ -67,31 +68,31 @@ public class AP1Tests {
 		assertEquals(1, aP1.wordsCount(new String[] { "xx", "yyy", "x", "yy", "z" }, 3));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void wordsFront() {
-		assertEquals(new String[] { "a" }, aP1.wordsFront(new String[] { "a", "b", "c", "d" }, 1));
-		assertEquals(new String[] { "a", "b" }, aP1.wordsFront(new String[] { "a", "b", "c", "d" }, 2));
-		assertEquals(new String[] { "a", "b", "c" }, aP1.wordsFront(new String[] { "a", "b", "c", "d" }, 3));
-		assertEquals(new String[] { "a", "b", "c", "d" }, aP1.wordsFront(new String[] { "a", "b", "c", "d" }, 4));
-		assertEquals(new String[] { "Hi" }, aP1.wordsFront(new String[] { "Hi", "There" }, 1));
-		assertEquals(new String[] { "Hi", "There" }, aP1.wordsFront(new String[] { "Hi", "There" }, 2));
+		assertArrayEquals(new String[] { "a" }, aP1.wordsFront(new String[] { "a", "b", "c", "d" }, 1));
+		assertArrayEquals(new String[] { "a", "b" }, aP1.wordsFront(new String[] { "a", "b", "c", "d" }, 2));
+		assertArrayEquals(new String[] { "a", "b", "c" }, aP1.wordsFront(new String[] { "a", "b", "c", "d" }, 3));
+		assertArrayEquals(new String[] { "a", "b", "c", "d" }, aP1.wordsFront(new String[] { "a", "b", "c", "d" }, 4));
+		assertArrayEquals(new String[] { "Hi" }, aP1.wordsFront(new String[] { "Hi", "There" }, 1));
+		assertArrayEquals(new String[] { "Hi", "There" }, aP1.wordsFront(new String[] { "Hi", "There" }, 2));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void wordsWithoutvoid() {
-		assertEquals(new String[] { "bb", "ccc" }, aP1.wordsWithoutList(new String[] { "a", "bb", "b", "ccc" }, 1));
-		assertEquals(new String[] { "a", "bb", "b" }, aP1.wordsWithoutList(new String[] { "a", "bb", "b", "ccc" }, 3));
-		assertEquals(new String[] { "a", "bb", "b", "ccc" },
+		assertArrayEquals(new String[] { "bb", "ccc" }, aP1.wordsWithoutList(new String[] { "a", "bb", "b", "ccc" }, 1));
+		assertArrayEquals(new String[] { "a", "bb", "b" }, aP1.wordsWithoutList(new String[] { "a", "bb", "b", "ccc" }, 3));
+		assertArrayEquals(new String[] { "a", "bb", "b", "ccc" },
 				aP1.wordsWithoutList(new String[] { "a", "bb", "b", "ccc" }, 4));
-		assertEquals(new String[] { "xx", "yyy", "yy" },
+		assertArrayEquals(new String[] { "xx", "yyy", "yy" },
 				aP1.wordsWithoutList(new String[] { "xx", "yyy", "x", "yy", "z" }, 1));
-		assertEquals(new String[] { "yyy", "x", "z" },
+		assertArrayEquals(new String[] { "yyy", "x", "z" },
 				aP1.wordsWithoutList(new String[] { "xx", "yyy", "x", "yy", "z" }, 2));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void hasOne() {
 		assertEquals(true, aP1.hasOne(10));
@@ -107,7 +108,7 @@ public class AP1Tests {
 		assertEquals(false, aP1.hasOne(56556));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void dividesSelf() {
 		assertEquals(true, aP1.dividesSelf(128));
@@ -123,41 +124,41 @@ public class AP1Tests {
 		assertEquals(true, aP1.dividesSelf(162));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void copyEvens() {
-		assertEquals(new int[] { 2, 4 }, aP1.copyEvens(new int[] { 3, 2, 4, 5, 8 }, 2));
-		assertEquals(new int[] { 2, 4, 8 }, aP1.copyEvens(new int[] { 3, 2, 4, 5, 8 }, 3));
-		assertEquals(new int[] { 6, 2, 4 }, aP1.copyEvens(new int[] { 6, 1, 2, 4, 5, 8 }, 3));
-		assertEquals(new int[] { 6, 2, 4, 8 }, aP1.copyEvens(new int[] { 6, 1, 2, 4, 5, 8 }, 4));
-		assertEquals(new int[] { 4 }, aP1.copyEvens(new int[] { 3, 1, 4, 1, 5 }, 1));
-		assertEquals(new int[] { 2 }, aP1.copyEvens(new int[] { 2 }, 1));
-		assertEquals(new int[] { 6, 2 }, aP1.copyEvens(new int[] { 6, 2, 4, 8 }, 2));
-		assertEquals(new int[] { 6, 2, 4 }, aP1.copyEvens(new int[] { 6, 2, 4, 8 }, 3));
-		assertEquals(new int[] { 6, 2, 4, 8 }, aP1.copyEvens(new int[] { 6, 2, 4, 8 }, 4));
-		assertEquals(new int[] { 8 }, aP1.copyEvens(new int[] { 1, 8, 4 }, 1));
-		assertEquals(new int[] { 8, 4 }, aP1.copyEvens(new int[] { 1, 8, 4 }, 2));
-		assertEquals(new int[] { 2, 8 }, aP1.copyEvens(new int[] { 2, 8, 4 }, 2));
+		assertArrayEquals(new int[] { 2, 4 }, aP1.copyEvens(new int[] { 3, 2, 4, 5, 8 }, 2));
+		assertArrayEquals(new int[] { 2, 4, 8 }, aP1.copyEvens(new int[] { 3, 2, 4, 5, 8 }, 3));
+		assertArrayEquals(new int[] { 6, 2, 4 }, aP1.copyEvens(new int[] { 6, 1, 2, 4, 5, 8 }, 3));
+		assertArrayEquals(new int[] { 6, 2, 4, 8 }, aP1.copyEvens(new int[] { 6, 1, 2, 4, 5, 8 }, 4));
+		assertArrayEquals(new int[] { 4 }, aP1.copyEvens(new int[] { 3, 1, 4, 1, 5 }, 1));
+		assertArrayEquals(new int[] { 2 }, aP1.copyEvens(new int[] { 2 }, 1));
+		assertArrayEquals(new int[] { 6, 2 }, aP1.copyEvens(new int[] { 6, 2, 4, 8 }, 2));
+		assertArrayEquals(new int[] { 6, 2, 4 }, aP1.copyEvens(new int[] { 6, 2, 4, 8 }, 3));
+		assertArrayEquals(new int[] { 6, 2, 4, 8 }, aP1.copyEvens(new int[] { 6, 2, 4, 8 }, 4));
+		assertArrayEquals(new int[] { 8 }, aP1.copyEvens(new int[] { 1, 8, 4 }, 1));
+		assertArrayEquals(new int[] { 8, 4 }, aP1.copyEvens(new int[] { 1, 8, 4 }, 2));
+		assertArrayEquals(new int[] { 2, 8 }, aP1.copyEvens(new int[] { 2, 8, 4 }, 2));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void copyEndy() {
-		assertEquals(new int[] { 9, 90 }, aP1.copyEndy(new int[] { 9, 11, 90, 22, 6 }, 2));
-		assertEquals(new int[] { 9, 90, 6 }, aP1.copyEndy(new int[] { 9, 11, 90, 22, 6 }, 3));
-		assertEquals(new int[] { 1, 1 }, aP1.copyEndy(new int[] { 12, 1, 1, 13, 0, 20 }, 2));
-		assertEquals(new int[] { 1, 1, 0 }, aP1.copyEndy(new int[] { 12, 1, 1, 13, 0, 20 }, 3));
-		assertEquals(new int[] { 0 }, aP1.copyEndy(new int[] { 0 }, 1));
-		assertEquals(new int[] { 10, 90 }, aP1.copyEndy(new int[] { 10, 11, 90 }, 2));
-		assertEquals(new int[] { 90, 100 }, aP1.copyEndy(new int[] { 90, 22, 100 }, 2));
-		assertEquals(new int[] { 10 }, aP1.copyEndy(new int[] { 12, 11, 10, 89, 101, 4 }, 1));
-		assertEquals(new int[] { 2, 2 }, aP1.copyEndy(new int[] { 13, 2, 2, 0 }, 2));
-		assertEquals(new int[] { 2, 2, 0 }, aP1.copyEndy(new int[] { 13, 2, 2, 0 }, 3));
-		assertEquals(new int[] { 2, 2 }, aP1.copyEndy(new int[] { 13, 2, 13, 2, 0, 30 }, 2));
-		assertEquals(new int[] { 2, 2, 0 }, aP1.copyEndy(new int[] { 13, 2, 13, 2, 0, 30 }, 3));
+		assertArrayEquals(new int[] { 9, 90 }, aP1.copyEndy(new int[] { 9, 11, 90, 22, 6 }, 2));
+		assertArrayEquals(new int[] { 9, 90, 6 }, aP1.copyEndy(new int[] { 9, 11, 90, 22, 6 }, 3));
+		assertArrayEquals(new int[] { 1, 1 }, aP1.copyEndy(new int[] { 12, 1, 1, 13, 0, 20 }, 2));
+		assertArrayEquals(new int[] { 1, 1, 0 }, aP1.copyEndy(new int[] { 12, 1, 1, 13, 0, 20 }, 3));
+		assertArrayEquals(new int[] { 0 }, aP1.copyEndy(new int[] { 0 }, 1));
+		assertArrayEquals(new int[] { 10, 90 }, aP1.copyEndy(new int[] { 10, 11, 90 }, 2));
+		assertArrayEquals(new int[] { 90, 100 }, aP1.copyEndy(new int[] { 90, 22, 100 }, 2));
+		assertArrayEquals(new int[] { 10 }, aP1.copyEndy(new int[] { 12, 11, 10, 89, 101, 4 }, 1));
+		assertArrayEquals(new int[] { 2, 2 }, aP1.copyEndy(new int[] { 13, 2, 2, 0 }, 2));
+		assertArrayEquals(new int[] { 2, 2, 0 }, aP1.copyEndy(new int[] { 13, 2, 2, 0 }, 3));
+		assertArrayEquals(new int[] { 2, 2 }, aP1.copyEndy(new int[] { 13, 2, 13, 2, 0, 30 }, 2));
+		assertArrayEquals(new int[] { 2, 2, 0 }, aP1.copyEndy(new int[] { 13, 2, 13, 2, 0, 30 }, 3));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void matchUp() {
 		assertEquals(1, aP1.matchUp(new String[] { "aa", "bb", "cc" }, new String[] { "aaa", "xx", "bb" }));
@@ -175,7 +176,7 @@ public class AP1Tests {
 		assertEquals(1, aP1.matchUp(new String[] { "aaa", "bb", "c" }, new String[] { "aaa", "xx", "bb" }));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void scoreUp() {
 		assertEquals(6, aP1.scoreUp(new String[] { "a", "a", "b", "b" }, new String[] { "a", "c", "b", "c" }));
@@ -195,21 +196,21 @@ public class AP1Tests {
 		assertEquals(12, aP1.scoreUp(new String[] { "a", "b", "c" }, new String[] { "a", "b", "c" }));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void wordsWithout() {
-		assertEquals(new String[] { "b", "c" }, aP1.wordsWithout(new String[] { "a", "b", "c", "a" }, "a"));
-		assertEquals(new String[] { "a", "c", "a" }, aP1.wordsWithout(new String[] { "a", "b", "c", "a" }, "b"));
-		assertEquals(new String[] { "a", "b", "a" }, aP1.wordsWithout(new String[] { "a", "b", "c", "a" }, "c"));
-		assertEquals(new String[] { "c", "a", "a" }, aP1.wordsWithout(new String[] { "b", "c", "a", "a" }, "b"));
-		assertEquals(new String[] { "xx", "yyy", "yy" },
+		assertArrayEquals(new String[] { "b", "c" }, aP1.wordsWithout(new String[] { "a", "b", "c", "a" }, "a"));
+		assertArrayEquals(new String[] { "a", "c", "a" }, aP1.wordsWithout(new String[] { "a", "b", "c", "a" }, "b"));
+		assertArrayEquals(new String[] { "a", "b", "a" }, aP1.wordsWithout(new String[] { "a", "b", "c", "a" }, "c"));
+		assertArrayEquals(new String[] { "c", "a", "a" }, aP1.wordsWithout(new String[] { "b", "c", "a", "a" }, "b"));
+		assertArrayEquals(new String[] { "xx", "yyy", "yy" },
 				aP1.wordsWithout(new String[] { "xx", "yyy", "x", "yy", "x" }, "x"));
-		assertEquals(new String[] { "xx", "yyy", "x", "x" },
+		assertArrayEquals(new String[] { "xx", "yyy", "x", "x" },
 				aP1.wordsWithout(new String[] { "xx", "yyy", "x", "yy", "x" }, "yy"));
-		assertEquals(new String[] { "ab", "ac" }, aP1.wordsWithout(new String[] { "aa", "ab", "ac", "aa" }, "aa"));
+		assertArrayEquals(new String[] { "ab", "ac" }, aP1.wordsWithout(new String[] { "aa", "ab", "ac", "aa" }, "aa"));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void scoresSpecial() {
 		assertEquals(40, aP1.scoresSpecial(new int[] { 12, 10, 4 }, new int[] { 2, 20, 30 }));
@@ -226,7 +227,7 @@ public class AP1Tests {
 		assertEquals(40, aP1.scoresSpecial(new int[] { 14, 10, 4 }, new int[] { 4, 20, 30 }));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void sumHeights() {
 		assertEquals(6, aP1.sumHeights(new int[] { 5, 3, 6, 7, 2 }, 2, 4));
@@ -243,7 +244,7 @@ public class AP1Tests {
 		assertEquals(2, aP1.sumHeights(new int[] { 10, 8, 7, 7, 7, 6, 7 }, 1, 5));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void sumHeights2() {
 		assertEquals(7, aP1.sumHeights2(new int[] { 5, 3, 6, 7, 2 }, 2, 4));
@@ -260,7 +261,7 @@ public class AP1Tests {
 		assertEquals(2, aP1.sumHeights2(new int[] { 10, 8, 7, 7, 7, 6, 7 }, 1, 5));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void bigHeights() {
 		assertEquals(1, aP1.bigHeights(new int[] { 5, 3, 6, 7, 2 }, 2, 4));
@@ -281,7 +282,7 @@ public class AP1Tests {
 		assertEquals(3, aP1.bigHeights(new int[] { 1, 2, 3, 14, 5, 4, 3, 2, 10 }, 2, 8));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void userCompare() {
 		assertEquals(-1, aP1.userCompare("bb", 1, "zz", 2));
@@ -294,30 +295,30 @@ public class AP1Tests {
 		assertEquals(1, aP1.userCompare("bzb", 1, "bob", 2));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void mergeTwo() {
-		assertEquals(new String[] { "a", "b", "c" },
+		assertArrayEquals(new String[] { "a", "b", "c" },
 				aP1.mergeTwo(new String[] { "a", "c", "z" }, new String[] { "b", "f", "z" }, 3));
-		assertEquals(new String[] { "a", "c", "f" },
+		assertArrayEquals(new String[] { "a", "c", "f" },
 				aP1.mergeTwo(new String[] { "a", "c", "z" }, new String[] { "c", "f", "z" }, 3));
-		assertEquals(new String[] { "c", "f", "g" },
+		assertArrayEquals(new String[] { "c", "f", "g" },
 				aP1.mergeTwo(new String[] { "f", "g", "z" }, new String[] { "c", "f", "g" }, 3));
-		assertEquals(new String[] { "a", "c", "z" },
+		assertArrayEquals(new String[] { "a", "c", "z" },
 				aP1.mergeTwo(new String[] { "a", "c", "z" }, new String[] { "a", "c", "z" }, 3));
-		assertEquals(new String[] { "a", "b", "c" },
+		assertArrayEquals(new String[] { "a", "b", "c" },
 				aP1.mergeTwo(new String[] { "a", "b", "c", "z" }, new String[] { "a", "c", "z" }, 3));
-		assertEquals(new String[] { "a", "b", "c" },
+		assertArrayEquals(new String[] { "a", "b", "c" },
 				aP1.mergeTwo(new String[] { "a", "c", "z" }, new String[] { "a", "b", "c", "z" }, 3));
-		assertEquals(new String[] { "a", "c" },
+		assertArrayEquals(new String[] { "a", "c" },
 				aP1.mergeTwo(new String[] { "a", "c", "z" }, new String[] { "a", "c", "z" }, 2));
-		assertEquals(new String[] { "a", "c", "y" },
+		assertArrayEquals(new String[] { "a", "c", "y" },
 				aP1.mergeTwo(new String[] { "a", "c", "z" }, new String[] { "a", "c", "y", "z" }, 3));
-		assertEquals(new String[] { "a", "b", "x" },
+		assertArrayEquals(new String[] { "a", "b", "x" },
 				aP1.mergeTwo(new String[] { "x", "y", "z" }, new String[] { "a", "b", "z" }, 3));
 	}
 
-	@Disabled
+	//@Disabled
 	@Test
 	public void commonTwo() {
 		assertEquals(2, aP1.commonTwo(new String[] { "a", "c", "x" }, new String[] { "b", "c", "d", "x" }));
